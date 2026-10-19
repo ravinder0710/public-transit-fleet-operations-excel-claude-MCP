@@ -1,0 +1,8 @@
+# Core Analytics & Microsoft Excel Prerequisites
+# Recommended Excel Version: Microsoft 365 / Excel 2016+ with Power Pivot enabled
+
+# Optional FastMCP / Python environment (for Claude MCP-assisted modeling)
+fastmcp>=0.1.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+numpy>=1.24.0

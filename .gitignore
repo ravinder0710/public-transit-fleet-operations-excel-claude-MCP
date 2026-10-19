@@ -1,0 +1,19 @@
+# ==============================================================================
+# .gitignore for Public Transit & Fleet Operations Dashboard (Excel + Claude MCP)
+# Stack  : Microsoft Excel (.xlsx), Power Query, Power Pivot, DAX, Claude MCP
+# Author : Ravinder Gupta (https://github.com/ravinder0710)
+# ==============================================================================
+
+# --- Operating System & Temporary Files ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+*.temp
+~$*.xlsx
+~$*.docx
+
+# --- IDE Settings ---
+.vscode/
+.idea/
+*.swp
