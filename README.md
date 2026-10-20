@@ -102,32 +102,33 @@ The data architecture connects central trip-level records to dedicated dimension
 
 ![Data Model Relationships](data_model_relationships.png)
 
-```text
-               ┌──────────────────────┐
-               │    Dim_DateTable     │
-               │ (Calendar Attributes)│
-               └──────────┬───────────┘
-                          │ 1
-                          │
-                          │ *
-┌──────────────────┐      │      ┌──────────────────┐
-│    Dim_buses     │ 1    │    1 │ Dim_demographics │
-│ (Capacity & ID)  ├──────┼──────┤ (Age & Profile)  │
-└────────┬─────────┘      │      └────────┬─────────┘
-         │ 1              │               │ 1
-         │                │               │
-         ▼ *              ▼ *             ▼ *
-┌───────────────────────────────────────────────────┐
-│                Facttable_ridership                │
-│ (Trip Records, Riders, Capacity, Utilization Pct) │
-└─────────────────────────┬─────────────────────────┘
-                          │ *
-                          │
-                          │ 1
-               ┌──────────▼───────────┐
-               │      Dim_routes      │
-               │ (Route Name & Fares) │
-               └──────────────────────┘
+```mermaid
+flowchart TD
+    subgraph Dimensions
+        D["Dim_DateTable - Calendar Attributes (DayOfWeek, Weekend)"]
+        B["Dim_buses - Fleet Capacity & Vehicle IDs (50-Cap Standard)"]
+        DM["Dim_demographics - Passenger Profiles (Age Groups, Categories)"]
+        R["Dim_routes - Transit Lines (East-West, Central, South)"]
+    end
+
+    subgraph Fact
+        F["Facttable_ridership - 6,587 Trip Records ($145K Fares)"]
+    end
+
+    subgraph OperationalInsights
+        O1["Rush-Hour Crowding: 29 Buses at >= 90% Capacity"]
+        O2["Fleet Under-Utilization: 19 Buses at < 50% Capacity"]
+        O3["Peak Weekday Volume: Sunday & Monday Transit Surge"]
+    end
+
+    D -->|"1:N"| F
+    B -->|"1:N"| F
+    DM -->|"1:N"| F
+    R -->|"1:N"| F
+
+    F --> O1
+    F --> O2
+    F --> O3
 ```
 
 ---
@@ -252,8 +253,6 @@ public-transit-fleet-operations-excel/
 **Ravinder Gupta**  
 *Data Analyst | Urban Mobility Analytics & Business Intelligence Specialist*  
 
-- 📍 **Location:** Alwar, Rajasthan, India  
+- 📍 **Location:** Gurugram (Delhi-NCR), India  
 - 📧 **Email:** [iamravindergupta17@gmail.com](mailto:iamravindergupta17@gmail.com)  
-- 💬 **WhatsApp:** [+91 9982637026](https://wa.me/919982637026?text=Hi%20Ravinder,%20saw%20your%20Public%20Transit%20portfolio)  
-- 💼 **LinkedIn:** [linkedin.com/in/ravinder-gupta-da](https://linkedin.com/in/ravinder-gupta-da)  
 - 🐙 **GitHub:** [github.com/ravinder0710](https://github.com/ravinder0710)
