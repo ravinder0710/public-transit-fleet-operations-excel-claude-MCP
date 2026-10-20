@@ -205,7 +205,6 @@ To guarantee mathematical integrity, all model outputs were validated across int
 ---
 
 ## 📂 Repository Structure
-
 ```text
 public-transit-fleet-operations-excel/
 │
@@ -218,6 +217,7 @@ public-transit-fleet-operations-excel/
 ├── Dim_demographics.csv                                              # Dimension: Rider age, gender, and occupation profiles
 ├── Facttable_ridership.csv                                           # Fact Table: Raw transaction-level ridership ledger
 │
+├── data_architecture_pipeline.png                                    # Fleet Transit Operations & AI FastMCP Workflow Architecture
 ├── transport_transaction_dashboard.png                               # View 1: Master Excel Executive Dashboard
 ├── data_model_relationships.png                                      # View 2: Power Pivot Star Schema Diagram
 ├── consolidated_kpi_evidence.png                                     # View 3: Intermediate PivotTable validation sheet
